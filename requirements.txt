@@ -31,3 +31,5 @@ websocket-client==1.4.0
 psycopg2-binary
 pint
 boto3
+django-htmx
+django-storages
