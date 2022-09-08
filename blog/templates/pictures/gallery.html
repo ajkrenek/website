@@ -1,0 +1,8 @@
+{% block content %}
+  {% include 'blog/base.html' %}
+{% endblock %}
+
+{% if img_obj %}
+  <h3>Your Pictures!</h3>
+  <img src="{{ img_obj.image.url}}" alt="connect" style="max-height:300px">
+{% endif %}

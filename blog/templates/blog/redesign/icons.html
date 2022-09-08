@@ -1,0 +1,39 @@
+{% block icons %}
+
+      <li>
+          <a href="{% url 'index' %}" class = "icon" alt="home">
+            {% include 'blog/icons/home.svg' %}
+          </a>
+      </li>
+<!-- User Access -->
+{% if user.is_authenticated %}
+      <!-- New Post  -->
+      <li>
+          <a href="{% url 'post_new' %}" class = "icon" alt="new file">{% include 'blog/icons/file-plus.svg' %}</a>
+      </li>
+      <!-- Log out  -->
+      <li>
+          <a href="{% url 'logout' %}" class="icon" alt="log-out">{% include 'blog/icons/log-out.svg' %}</a>
+      </li>
+      <!-- Profile if logged in -->
+      <li>
+          <a href="{% url 'user_profile' %}" class="icon" alt="profile">{% include 'blog/icons/user.svg' %}</a>
+      </li>
+
+    {% else %}
+    <!-- Profile login redirect  -->
+      <li>
+          <a href="{% url 'login' %}" class="icon" alt="profile">{% include 'blog/icons/user.svg' %}</a>
+      </li>
+    {% endif %}
+
+<!-- Super User Access -->
+    {% if user.is_superuser %}
+    <!-- Admin portal  -->
+      <li>
+          <a href="{% url 'admin:index' %}" class="icon" alt="admin">{% include 'blog/icons/key.svg' %}</a>
+      </li>
+
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,73 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Standalone Blog!</title>
+        <meta charset="utf-8" />
+    		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!-- Style -->
+        <link rel="stylesheet" href="{% static 'blog/assets-strata/css/main.css' %}">
+        <link rel="stylesheet" href="{% static 'blog/comments.css' %}">
+	<!-- Scripts -->
+        <script type="{% static 'blog/form.js' %}"></script>
+        <script src="{% static 'blog/assets-strata/js/jquery.min.js' %}"></script>
+        <script src="{% static 'blog/assets-strata/js/jquery.poptrox.min.js' %}"></script>
+        <script src="{% static 'blog/assets-strata/js/browser.min.js' %}"></script>
+        <script src="{% static 'blog/assets-strata/js/breakpoints.min.js' %}"></script>
+        <script src="{% static 'blog/assets-strata/js/util.js' %}"></script>
+        <script src="{% static 'blog/assets-strata/js/main.js' %}"></script>
+        <link href="//fonts.googleapis.com/css?family=Megrim&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+    </head>
+    <body class="is-preload">
+<!-- Header -->
+        <header id="header">
+          <div class="inner">
+              <h1><strong>Welcome!</strong>, this is my<br />
+              blog website that I <br />
+              have been working on</h1>
+              <ul class="icons">
+                {% block icons %}
+                {% include 'blog/redesign/icons.html' %}
+                {% endblock %}
+              </ul>
+            </div>
+        </header>
+<!-- Main -->
+        <div id="main">
+          <section id="one">
+            	<header class="major">
+                <h2>The Standalone Blog</h2>
+                </header>
+          </section>
+<!-- Content -->
+          <section id="two">
+                <div class="row">
+                  {% block content %}
+                  {% endblock %}
+
+                </div>
+
+        </section>
+        {% block pages %}
+        {% endblock %}
+</div>
+<!-- Footer -->
+    <footer id="footer">
+
+      <div class="inner">
+
+        <ul class="icons">
+          {% block footicons %}
+            {% include 'blog/redesign/icons.html' %}
+          {% endblock %}
+        </ul>
+
+      </div>
+
+    </footer>
+
+  </body>
+</html>

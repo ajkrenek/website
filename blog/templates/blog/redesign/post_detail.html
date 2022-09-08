@@ -1,0 +1,49 @@
+{% extends 'blog/redesign/post_detail_base.html' %}
+
+{% block header %}
+<!-- Edit Post -->
+
+      <aside class="actions" style="float: left;">
+        {% if user.is_authenticated %}
+          {% if user.id == posts.author.id %}
+          <a class="btn btn-outline-secondary" href="{% url 'post_edit' slug=posts.slug %}">
+              {% include 'blog/icons/edit_black.svg' %}
+          </a>
+          <a href="{% url 'post_delete' slug=posts.slug %}">Delete</a>
+
+          {% endif %}
+        {% endif %}
+      </aside>
+{% endblock %}
+
+{% block detail %}
+      {% if posts.published_date %}
+        <br>  <time class="date">{{ posts.published_date }}</time>
+      {% endif %}
+
+      <h1>{{ posts.title }} </h1>
+
+      <h3>By: {{  posts.author }}</h3>
+          {% if posts.header_image %}
+              <img src="{{ posts.header_image.url }}" class="image fit" alt="{{posts.title}}">
+          {% endif %}
+        <p>{{ posts.text|safe }}</p>
+
+{% endblock %}
+
+
+
+{% block footer %}
+<footer id="footer">
+	<div class="inner">
+		<section>
+      {% block comments %}
+        {% include 'blog/redesign/comments.html' %}
+      {% endblock %}
+		</section>
+	</div>
+</footer>
+
+
+
+{% endblock %}

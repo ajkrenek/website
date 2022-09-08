@@ -1,0 +1,152 @@
+
+h1{
+    font-family: 'Megrim', cursive;
+    text-align: center;
+}
+[class^="text"]{
+  display:inline-block;
+  background-color: powderblue;
+}
+
+.text-list{
+  height: 9em;
+  width: calc(75%);
+  background-color: powderblue;
+  word-break: break-all
+  inline-size: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text-detail{
+  height:calc(90%);
+  width:calc(100%);
+  word-break: break-all
+  inline-size: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.login{
+    border-radius: 25px;
+    border: 2px solid #FF1493;
+    padding: 10px;
+    width: 215px;
+    height: 250px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align: center;
+}
+
+.page-header {
+    background-color: #FF1493;
+    margin-top: 0;
+    margin-bottom: 40px;
+    padding: 20px 20px 20px 40px;
+}
+
+/* POST LIST TITLES */
+.titles h2 a,
+.titles h2 a:visited {
+    color: #000000;
+}
+.page-header h1,
+.page-header h1 a,
+.page-header h1 a:visited,
+.page-header h1 a:active {
+    color: #ffffff;
+    font-size: 36pt;
+    text-decoration: none;
+}
+
+.date {
+    color: #828282;
+    margin-left: auto;
+}
+
+.save {
+    float: right;
+}
+
+.post-form textarea,
+.post-form input {
+    width: 100%;
+}
+
+.post {
+    margin-bottom: 70px;
+}
+
+
+.date,
+.actions {
+    float: right;
+}
+
+/* BUTTONS
+.btn-secondary,
+.btn-secondary:visited {
+    color: #C25100;
+    background: none;
+    border-color: #C25100;
+}
+
+.btn-secondary:hover {
+    color: #FFFFFF;
+    background-color: #C25100;
+} */
+
+/* IMAGES */
+.featured-image-list{
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+  height: 150px;
+  margin-right: auto;
+  display: block;
+}
+
+.detail-view{
+  object-fit: cover;
+  width: 150px;
+  height: 150px;
+}
+
+
+/* Icons */
+[class^="icon"]{
+    position: relative;
+    color: #ffffff;
+    font-size: 26pt;
+}
+.icon-home,
+.icon-home:hover,
+.icon-home:visited {
+    float: left;
+}
+
+.icon-new,
+.icon-new:hover,
+.icon-new:visited {
+    float: left;
+}
+.icon-profile,
+.icon-profile:hover,
+.icon-profile:visited {
+    float: right;
+}
+.icon-logout,
+.icon-logout:hover,
+.icon-logout:visited {
+    float: right;
+
+}
+
+.icon-key,
+.icon-key:hover,
+.icon-key:visited {
+    float: right;
+
+}

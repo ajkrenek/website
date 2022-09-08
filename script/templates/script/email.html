@@ -1,0 +1,23 @@
+{% extends 'script/base.html' %}
+{% load crispy_forms_tags %}
+{% load myfilters %}
+
+{% block email %}
+
+<div class="mx-auto my-4 text-center">
+  <a href="{% url 'index' %}" class = "icon-home">
+      {% include './icons/home.svg' %}
+  </a>
+    <h1>Welcome to the Email Terminal!</h1>
+    <h1>Send yourself a customized email!</h1>
+</div>
+<br>
+    <form action="" class="text-form"  method="POST" >
+      {% csrf_token %}
+      {{ form.media }}
+      {{ form | crispy }}
+      <button class="btn btn-success my-3" type="submit">Send message</button>
+    </form>
+
+
+{% endblock %}

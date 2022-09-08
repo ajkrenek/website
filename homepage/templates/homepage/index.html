@@ -1,0 +1,132 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<section id="home" class="main special">
+	<head>
+		<title>Andrew Krenek</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'homepage/assets/css/main.css' %}" />
+		<noscript><link rel="stylesheet" href="{% static 'homepage/assets/css/noscript.css' %}" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<span class="logo"><img src="{% static 'homepage/icons/atom25.svg' %}" alt="" /></span>
+						<h1>Andrew Krenek</h1>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="#intro" class="active">Introduction</a></li>
+							<li><a href="#first">Projects</a></li>
+							<li><a href="#contact">Contact</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Introduction -->
+							<section id="intro" class="main">
+								<div class="spotlight">
+									<div class="content">
+										<header class="major">
+											<h2>About me</h2>
+										</header>
+										<p>Hello! My name is Andrew Krenek.
+										I have my bachelors degree in Chemical Engineering, but recently have grown a strong interest and desire in becoming
+										a software engineer.
+										<br>
+										Although formally trained as a chemical engineer, my unique background has given me the most important skills:
+										Problem solving and thinking critically.
+										<br>
+										Allowing me the ability to learn the following skills:
+										</p>
+										<ol>&bull; Python</ol>
+										<ol>&bull; Django</ol>
+										<ol>&bull; HTML/CSS</ol>
+										<ol>&bull; Linux/Ubuntu/Git</ol>
+										<ol>&bull; C++</ol>
+										<ol>&bull; Java</ol>
+									</div>
+									<span class="image"><img src="{% static 'homepage/icons/me.jpg' %}" alt="" /></span>
+								</div>
+							</section>
+
+						<!-- First Section -->
+							<section id="first" class="main special">
+								<header class="major">
+									<h2>My Projects!</h2>
+								</header>
+								<ul class="features">
+									<li>
+										<span class="icon solid major style1 fa-regular fa-envelope"></span>
+										<h3><a href="https://github.com/ajkrenek/Automated-email" class="active">Automated Email</a></h3>
+										<p>This is an automated email that queries reddit and tumblr for a quote and image and embeds it into an email to be sent daily.
+											Try a demo <a href="{% url 'script:mailview' %}" class="active">here!</a>
+										</p>
+										<li></li>
+									</li>
+									<li>
+										<span class="icon solid major style3 fa-regular fa-globe"></span>
+										<h3><a href="{% url 'homepage' %}" class="active">Django Blog Website</a></h3>
+										<p>This is a blog website that I made for friend using Django and hosted on Amazon Web Services</p>
+									</li>
+
+								</ul>
+							</section>
+
+
+
+					</div>
+
+				<!-- Footer -->
+				<section id="contact" class="main special">
+					<footer id="footer">
+						<section>
+							<h2>Thank you for visiting my website!</h2>
+							<p>I appreciate your time and consideration. Feel free to contact me for any questions via any of the platforms to the right.</p>
+
+						</section>
+						<section>
+							<h2>Contact</h2>
+							<dl class="alt">
+								<dt>Address</dt>
+								<dd>Houston &bull; TX </dd>
+								<dt>Phone</dt>
+								<dd>(281) 202-7334</dd>
+								<dt>Email</dt>
+								<dd><a href="mailto:ajkrenek@uh.edu">ajkrenek@uh.edu</a></dd>
+							        <dt>LinkedIn</dt>
+								<dd><a href="https://www.linkedin.com/in/andrew-krenek-7a3630181/">linkedin.com/in/andrew-krenek</a></dd>
+							</dl>
+
+						</section>
+						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{% static 'homepage/assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'homepage/assets/js/jquery.scrollex.min.js' %}"></script>
+			<script src="{% static 'homepage/assets/js/jquery.scrolly.min.js' %}"></script>
+			<script src="{% static 'homepage/assets/js/browser.min.js' %}"></script>
+			<script src="{% static 'homepage/assets/js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'homepage/assets/js/util.js' %}"></script>
+			<script src="{% static 'homepage/assets/js/main.js' %}"></script>
+
+	</body>
+</html>

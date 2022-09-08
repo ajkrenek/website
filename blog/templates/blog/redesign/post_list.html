@@ -1,0 +1,44 @@
+{% extends 'blog/redesign/base.html' %}
+
+{% block content %}
+
+  {% for post in posts %}
+
+<!-- Header<time class="date">
+      {{ post.published_date }}
+  </time> -->
+      <article class="col-6 col-12-xsmall work-item">
+            {% if post.header_image %}
+                <a href="{{ post.header_image.url }}" class="image fit thumb"><img src="{{ post.header_image.url }}" alt="{{post.title}}"/></a>
+            {% endif %}
+            <h3><a href="{% url 'post_detail' post.slug %}"  class="titles">{{ post.title }} </a></h3>
+            <p>{{ post.text|truncatewords:50|safe }}</p>
+      </article>
+  {% endfor %}
+
+{% endblock %}
+
+{% block pages %}
+  {% if posts.has_other_pages %}
+    <ul class="actions pagination">
+      {% if posts.has_previous %}
+        <li><a href="?page={{ posts.previous_page_number }}" class=" button large previous">Previous Page</a></li>
+      {% else %}
+        <li class="disabled"><span>Previous Page</span></li>
+      {% endif %}
+
+      {% for i in posts.paginator.page_range %}
+        {% if posts.number == i %}
+          <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+        {% else %}
+          <li><a href="?page={{ i }}">{{ i }}</a></li>
+        {% endif %}
+      {% endfor %}
+      {% if posts.has_next %}
+        <li><a href="?page={{ posts.next_page_number }}" class="button large next">Next Page</a></li>
+      {% else %}
+          <li class="disabled"><span>Next Page</span></li>
+      {% endif %}
+    </ul>
+  {% endif %}
+{% endblock %}

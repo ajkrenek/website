@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>The Standalone Blog</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <link rel="stylesheet" href="{% static 'blog/assets-phantom/css/main.css' %}">
+
+    <script type="{% static 'blog/form.js' %}"></script>
+    <script src="{% static 'blog/assets-phantom/js/jquery.min.js' %}"></script>
+    <script src="{% static 'blog/assets-phantom/js/browser.min.js' %}"></script>
+    <script src="{% static 'blog/assets-phantom/js/breakpoints.min.js' %}"></script>
+    <script src="{% static 'blog/assets-phantom/js/util.js' %}"></script>
+    <script src="{% static 'blog/assets-phantom/js/main.js' %}"></script>
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+
+<body class="is-preload">
+
+
+  <div id="wrapper">
+
+<!-- Header -->
+  <header id="header">
+    <div class="inner">
+
+      <!-- Nav -->
+        <nav>
+					<h3><a href="{% url 'post_list' %}">The Standalone Blog</a></h3>
+          <ul>
+            {% block icons %}
+              {% include 'blog/redesign/icons.html' %}
+            {% endblock %}
+          </ul>
+        </nav>
+
+    </div>
+  </header>
+
+<!-- Main -->
+  <div id="main">
+    <div class="inner">
+      {% block profile %}
+      {% endblock %}
+      </div>
+  </div>
+
+  </body>
+</html>

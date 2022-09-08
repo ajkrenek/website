@@ -1,0 +1,17 @@
+{% block content %}
+  {% include 'blog/redesign/registration_base.html' %}
+{% endblock %}
+
+<div class="login">
+
+
+  <h2>Log In</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Log In</button>
+  </form>
+  <p class="my-5">Need to create an account?
+    <a href="{% url 'register' %}">Sign up here!</a>
+  </p>
+</div>

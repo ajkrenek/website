@@ -1,0 +1,11 @@
+{% extends 'blog/redesign/post_detail_base.html' %}
+{% block detail %}
+    <h2>New Post</h2>
+    <form class="post-form" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.media }}
+      {{ form.as_p }}
+      <button type="submit" class="save btn btn-secondary">Save</button>
+      
+    </form>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'homepage/style.css' %}">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  </head>
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+
+  <!-- Background & animion & navbar & title -->
+    <div class="container-fluid">
+  <!-- Background animtion-->
+      <div class="background">
+         <div class="cube"></div>
+         <div class="cube"></div>
+         <div class="cube"></div>
+         <div class="cube"></div>
+        <div class="cube"></div>
+      </div>
+  <!-- header -->
+     <header>
+  <!-- navbar -->
+       <nav>
+          <ul>
+             <li><a href="#">Home</a></li>
+              <li><a href="{% url 'post_list' %}">My Blog</a></li>
+              <li><a href="{% url 'script:mailview' %}">Email App</a></li>
+
+           </ul>
+         </nav>
+  <!-- logo
+        <div class="logo"><span>N</span></div> -->
+  <!-- title & content -->
+        <section class="header-content">
+           <h1>Welcome</h1>
+          <p> Welcome to my website. There isn't much to explore,<br>
+             but have a look around anyways.</p>
+          <a href="{% url 'index' %}"><button>About me</button></a>
+
+        </section>
+    </header>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  </body>
+</html>
