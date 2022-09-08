@@ -25,12 +25,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = str(env('DEBUG')) == "1"
+DEBUG = str(os.environ.get('DEBUG')) == "1"
 
-ENV_ALLOWED_HOST = env('DJANGO_ALLOWED_HOST') or None
+ENV_ALLOWED_HOST = os.environ.get('DJANGO_ALLOWED_HOST') or None
 ALLOWED_HOSTS = []
 if not DEBUG:
     ALLOWED_HOSTS += [os.environ.get('DJANGO_ALLOWED_HOST')]
@@ -99,11 +99,11 @@ DATABASES = {
     }
 }
 
-POSTGRES_DB = env("POSTGRES_DB") #database name
-POSTGRES_PASSWORD = env("POSTGRES_PASSWORD") # database user password
-POSTGRES_USER = env("POSTGRES_USER") # database username
-POSTGRES_HOST = env("POSTGRES_HOST") # database host
-POSTGRES_PORT = env("POSTGRES_PORT") # database port
+POSTGRES_DB = os.environ.get("POSTGRES_DB") #database name
+POSTGRES_PASSWORD = os.environ.get("POSTGRES_PASSWORD") # database user password
+POSTGRES_USER = os.environ.get("POSTGRES_USER") # database username
+POSTGRES_HOST = os.environ.get("POSTGRES_HOST") # database host
+POSTGRES_PORT = os.environ.get("POSTGRES_PORT") # database port
 
 POSTGRES_READY = (
     POSTGRES_DB is not None
