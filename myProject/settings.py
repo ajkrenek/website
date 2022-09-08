@@ -30,6 +30,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = str(env('DEBUG')) == "1"
 
+ENV_ALLOWED_HOST = env('DJANGO_ALLOWED_HOST') or None
 ALLOWED_HOSTS = []
 if not DEBUG:
     ALLOWED_HOSTS += [os.environ.get('DJANGO_ALLOWED_HOST')]
@@ -43,6 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_htmx',
+    'storages',
     'compressor',
     'sass_processor',
     'ckeditor',
@@ -60,6 +63,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_htmx.middleware.HtmxMiddleware',
 ]
 
 ROOT_URLCONF = 'myProject.urls'
