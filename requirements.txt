@@ -126,7 +126,7 @@ termcolor==1.1.0
 tf-estimator-nightly==2.8.0.dev2021122109
 trio==0.19.0
 trio-websocket==0.9.2
-Twisted==18.9.0
+Twisted==22.4.0
 typing-extensions==4.2.0
 ubuntu-advantage-tools==27.2
 ufw==0.36
