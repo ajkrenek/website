@@ -28,3 +28,4 @@ sqlparse==0.4.2
 update-checker==0.18.0
 urllib3==1.26.12
 websocket-client==1.4.0
+psycopg2-binary
