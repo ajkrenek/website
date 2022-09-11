@@ -148,6 +148,8 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 SASS_PROCESSOR_ROOT = STATIC_ROOT
 
+from .cdn.conf import *
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
