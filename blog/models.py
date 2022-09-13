@@ -12,7 +12,7 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     #text = models.TextField()
-    text = RichTextField(blank=True, null=True)
+    text = RichTextField(blank=False, null=False)
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
     slug = models.SlugField(max_length=200, unique=True)
