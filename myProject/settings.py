@@ -155,19 +155,10 @@ if USE_SPACES:
     AWS_DEFAULT_ACL = 'public-read'
     AWS_S3_ENDPOINT_URL = 'https://nyc3.digitaloceanspaces.com'
     AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
-    # static settings
-    AWS_LOCATION = f'https://{AWS_STORAGE_BUCKET_NAME}.nyc3.digitaloceanspaces.com'
-    STATIC_URL = '/static/'
-    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
-    # public media settings
-    AWS_LOCATION = f'https://{AWS_STORAGE_BUCKET_NAME}.nyc3.digitaloceanspaces.com'
-    MEDIA_URL = '/media/'
-    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-else:
-    STATIC_URL = '/static/'
-    STATIC_ROOT = BASE_DIR / 'staticfiles'
-    MEDIA_URL = '/media/'
-    MEDIA_ROOT = BASE_DIR / 'media'
+    AWS_LOCATION = 'https://django-website.nyc3.digitaloceanspaces.com'
+    STATICFILES_STORAGE = 'myProject.storage_backends.StaticStorage'
+    DEFAULT_FILE_STORAGE = 'myProject.storage_backends.PublicMediaStorage'
+
 
 COMPRESS_PRECOMPILERS = (
     ('text/x-scss', 'django_libsass.SassCompiler'),
