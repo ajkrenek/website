@@ -158,11 +158,11 @@ if USE_SPACES:
     # static settings
     AWS_LOCATION = f'https://{AWS_STORAGE_BUCKET_NAME}.nyc3.digitaloceanspaces.com'
     STATIC_URL = '/static/'
-    STATICFILES_STORAGE = 'myProject.storage_backends.StaticStorage'
+    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
     # public media settings
     AWS_LOCATION = f'https://{AWS_STORAGE_BUCKET_NAME}.nyc3.digitaloceanspaces.com'
     MEDIA_URL = '/media/'
-    DEFAULT_FILE_STORAGE = 'myProject.storage_backends.PublicMediaStorage'
+    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 else:
     STATIC_URL = '/static/'
     STATIC_ROOT = BASE_DIR / 'staticfiles'
