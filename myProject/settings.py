@@ -156,11 +156,11 @@ if USE_SPACES:
     AWS_S3_ENDPOINT_URL = 'https://nyc3.digitaloceanspaces.com'
     AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
     # static settings
-    AWS_LOCATION = 'static'
+    AWS_LOCATION = f'https://{AWS_STORAGE_BUCKET_NAME}.nyc3.digitaloceanspaces.com'
     STATIC_URL = '/static/'
     STATICFILES_STORAGE = 'myProject.storage_backends.StaticStorage'
     # public media settings
-    PUBLIC_MEDIA_LOCATION = 'media'
+    AWS_LOCATION = f'https://{AWS_STORAGE_BUCKET_NAME}.nyc3.digitaloceanspaces.com'
     MEDIA_URL = '/media/'
     DEFAULT_FILE_STORAGE = 'myProject.storage_backends.PublicMediaStorage'
 else:
